@@ -34,10 +34,13 @@ fn app(cx: Scope) -> Element {
                 h3 {"order pizza via IBC"}
                 
                 if !*is_logined.read() {
-                    rsx! (div { 
+                    rsx! (
+
+                        div { 
                             class: "calculator-display", 
-                            h1 {"Welcome"} 
+                            h1 {"Please login"} 
                         }
+    
 
                         div { 
                             class: "pizzamenu",
@@ -54,11 +57,12 @@ fn app(cx: Scope) -> Element {
                     )
                 } else {
                     rsx! (
-                    div { 
-                        class: "calculator-display", 
-                        h1 {"Please login"} 
-                    }
-                    div { 
+                        div { 
+                            class: "calculator-display", 
+                            h1 {"Welcome"} 
+                        }
+
+                        div { 
                         class: "pizzamenu",
                         img { src: "assets/ibc.png", }
                         img { src: "assets/pizza.jpeg", }
