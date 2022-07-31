@@ -3,6 +3,7 @@ mod review;
 mod login;
 mod order;
 mod location;
+mod program;
 use dioxus::events::*;
 use dioxus::prelude::*;
 use dioxus::router::{Link, Route, Router};
@@ -11,8 +12,9 @@ use vieworder::ViewOrder;
 use review::Review;
 use login::Login;
 use location::Location;
-
+use program::G_PROGRAM;
 fn main() {
+    G_PROGRAM.lock().unwrap().initialize();
     dioxus::desktop::launch(app);
 }
 
