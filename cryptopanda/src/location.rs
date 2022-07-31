@@ -1,8 +1,6 @@
-use dioxus::events::*;
-use dioxus::prelude::*;
-use dioxus::router::{Link, Route, Router};
 use crate::G_LOGINED;
-pub fn Location(cx: Scope) -> Element {
+use dioxus::prelude::*;
+pub fn location(cx: Scope) -> Element {
     let is_logined = use_atom_ref(&cx, G_LOGINED);
     cx.render(rsx! {
         if !*is_logined.read() {
@@ -12,8 +10,6 @@ pub fn Location(cx: Scope) -> Element {
             rsx!(
             div {
                 h1 { "Where" }
-            
-
                 form {
                     onsubmit: move |ev| println!("Submitted {:?}", ev.values),
                     oninput: move |ev| println!("Input {:?}", ev.values),
@@ -22,7 +18,6 @@ pub fn Location(cx: Scope) -> Element {
                 }
            }
         )
-            
         }  // end of else
     } // end of rsx
     )

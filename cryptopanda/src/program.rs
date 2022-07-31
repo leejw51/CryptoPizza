@@ -1,16 +1,10 @@
-use std::sync::{Arc, Mutex};
-use once_cell::sync::Lazy; // 1.3.1
-pub struct Program
-{
-
-}
+use once_cell::sync::Lazy;
+use std::sync::{Arc, Mutex}; // 1.3.1
+pub struct Program {}
 
 impl Program {
     pub fn new() -> Program {
-        
-        Program {
-
-        }
+        Program {}
     }
     pub fn initialize(&self) {
         println!("Program Initialized");
